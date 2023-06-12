@@ -9,11 +9,11 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class RegistrationComponent {
   user: User = {
-    fname: '',
-    lname: '',
-    email: '',
-    contact:'',
-    password:''
+    name: '',
+    userId: '',
+    accountNumber: '',
+    password:'',
+    balance: 0,
   };
   submitted = false;
 
@@ -21,11 +21,11 @@ export class RegistrationComponent {
 
   registerUser(): void {
     const data = {
-      fname: this.user.fname,
-      lname: this.user.lname,
-      email:this.user.email,
-      contact:this.user.contact,
-      password:this.user.password
+      name: this.user.name,
+      userId: this.user.userId,
+      accountNumber:this.user.accountNumber,
+      password:this.user.password,
+      balance:this.user.balance
     };
 
     this.service.register(data)
@@ -41,11 +41,11 @@ export class RegistrationComponent {
   newUser(): void {
     this.submitted = false;
     this.user = {
-      fname: '',
-      lname: '',
-      email: '',
-      contact:'',
-      password:''
+      name: '',
+      userId: '',
+      accountNumber: '',
+      password:'',
+      balance: 0
     };
   }
 
